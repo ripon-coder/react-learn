@@ -1,0 +1,28 @@
+.main-quiz {
+    height: 80vh;
+    width: 70%;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.questionSection{
+    position: relative;
+}
+
+.questionSection h1{
+    font-size: 22px;
+    font-weight: 400;
+    padding: 28px 19px;
+    display: inline-block;
+    width: 70%;
+}
+.questionSection p {
+	display: inline-block;
+	position: absolute;
+	right: 26px;
+	top: 2px;
+}
+.questionSection p span{
+    font-size: 25px;
+}
