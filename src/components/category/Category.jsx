@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Category.css";
 import manImg from "../../assets/man.jpg";
 export default function Category() {
@@ -18,7 +19,7 @@ export default function Category() {
               </p>
               <img src={manImg} />
               <div className="btnGroup">
-                <button className="btn">Quiz Info</button>
+                <button className="btn"><Link to="/quiz-list/4">Quiz Info</Link></button>
                 <button className="btn">Get Started</button>
               </div>
             </div>

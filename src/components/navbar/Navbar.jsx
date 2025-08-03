@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
 export default function Navbar() {
@@ -10,7 +11,7 @@ export default function Navbar() {
           </div>
           <div>
             <ul>
-              <li>Home</li>
+              <li><Link to="/">Home</Link></li>
               <li>Ongoing Quizzes</li>
               <li>Upcoming Quizzes</li>
               <li>Register</li>
