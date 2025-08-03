@@ -1,0 +1,37 @@
+.footer {
+    background-color: #1A1C1D;
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.footerSection {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerSection h2 {
+    font-size: 18px;
+}
+.footerSection h2::after{
+    content: "";
+    width: 30%;
+    height: 3px;
+    background-color: #448AFF;
+    display: block;
+    top: 0;
+    margin-top: 8px;
+
+}
+.footerSection ul {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 10px;
+}
+
+.footerSection ul li {
+    list-style: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding-top: 8px;
+}

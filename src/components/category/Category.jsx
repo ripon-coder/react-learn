@@ -17,6 +17,10 @@ export default function Category() {
                 survived not only five centuries, but also the
               </p>
               <img src={manImg} />
+              <div className="btnGroup">
+                <button className="btn">Quiz Info</button>
+                <button className="btn">Get Started</button>
+              </div>
             </div>
             <div className="category">
               <i class="fa-solid fa-address-card"></i>
@@ -29,6 +33,10 @@ export default function Category() {
                 survived not only five centuries, but also the
               </p>
               <img src={manImg} />
+              <div className="btnGroup">
+                <button className="btn">Quiz Info</button>
+                <button className="btn">Get Started</button>
+              </div>
             </div>
             <div className="category">
               <i class="fa-solid fa-address-card"></i>
@@ -41,6 +49,10 @@ export default function Category() {
                 survived not only five centuries, but also the
               </p>
               <img src={manImg} />
+              <div className="btnGroup">
+                <button className="btn">Quiz Info</button>
+                <button className="btn">Get Started</button>
+              </div>
             </div>
             <div className="category">
               <i class="fa-solid fa-address-card"></i>
@@ -53,7 +65,15 @@ export default function Category() {
                 survived not only five centuries, but also the
               </p>
               <img src={manImg} />
+              <div className="btnGroup">
+                <button className="btn">Quiz Info</button>
+                <button className="btn">Get Started</button>
+              </div>
             </div>
+          </div>
+          <div className="btnlist">
+            <button>All ongoing Quiz</button>
+            <button>Upcoming quiz</button>
           </div>
         </div>
       </div>
