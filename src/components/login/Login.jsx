@@ -1,13 +1,17 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./Login.css";
 import { apiFetch } from "../../../api.js";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function handleLogin(e) {
     e.preventDefault();
+    if (email === "" || password === "") return;
 
     apiFetch("login", {
       method: "POST",
@@ -17,9 +21,10 @@ export default function Login() {
         setEmail("");
         setPassword("");
         localStorage.setItem("token", res.data.token);
-        console.log("Login success");
+        toast.success("Login successful!");
+        navigate("/");
       } else {
-        console.error("Login failed", res.data);
+        toast.error("Invalid credentials");
       }
     });
   }
@@ -33,6 +38,7 @@ export default function Login() {
             <form className="loginInputsection" onSubmit={handleLogin}>
               <label>Email</label>
               <input
+                required
                 type="text"
                 value={email}
                 autoComplete="email"
@@ -41,6 +47,7 @@ export default function Login() {
               />
               <label>Password</label>
               <input
+                required
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
