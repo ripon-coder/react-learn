@@ -8,7 +8,7 @@ export default function Category() {
         <div className="container">
           <div className="category-main">
             <div className="category">
-              <i class="fa-solid fa-address-card"></i>
+              <i className="fa-solid fa-address-card"></i>
               <h1>General Quiz Competition</h1>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -24,7 +24,7 @@ export default function Category() {
               </div>
             </div>
             <div className="category">
-              <i class="fa-solid fa-address-card"></i>
+              <i className="fa-solid fa-address-card"></i>
               <h1>General Quiz Competition</h1>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -40,7 +40,7 @@ export default function Category() {
               </div>
             </div>
             <div className="category">
-              <i class="fa-solid fa-address-card"></i>
+              <i className="fa-solid fa-address-card"></i>
               <h1>General Quiz Competition</h1>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -56,7 +56,7 @@ export default function Category() {
               </div>
             </div>
             <div className="category">
-              <i class="fa-solid fa-address-card"></i>
+              <i className="fa-solid fa-address-card"></i>
               <h1>General Quiz Competition</h1>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
