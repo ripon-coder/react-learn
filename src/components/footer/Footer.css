@@ -35,3 +35,15 @@
     font-size: 14px;
     padding-top: 8px;
 }
+
+@media (max-width: 768px) {
+    .footerSection{
+        flex-direction: column;
+    }
+    .eachfooterSection:first-child{
+        margin-top: 0px;
+    }
+    .eachfooterSection{
+        margin-top: 35px;
+    }
+}

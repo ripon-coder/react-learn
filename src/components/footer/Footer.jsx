@@ -5,7 +5,7 @@ export default function Footer() {
       <div className="footer">
         <div className="container">
           <div className="footerSection">
-            <div>
+            <div className="eachfooterSection">
               <h2>About Us</h2>
               <ul>
                 <li>About Us</li>
@@ -13,7 +13,7 @@ export default function Footer() {
                 <li>Privacy Policy</li>
               </ul>
             </div>
-            <div>
+            <div className="eachfooterSection">
               <h2>Help & Support</h2>
               <ul>
                 <li>About Us</li>
@@ -21,7 +21,7 @@ export default function Footer() {
                 <li>Privacy Policy</li>
               </ul>
             </div>
-            <div>
+            <div className="eachfooterSection">
               <h2>Quick Links</h2>
               <ul>
                 <li>About Us</li>
@@ -29,7 +29,7 @@ export default function Footer() {
                 <li>Privacy Policy</li>
               </ul>
             </div>
-            <div>
+            <div className="eachfooterSection">
               <h2>Download Our App</h2>
               <ul>
                 <li>About Us</li>

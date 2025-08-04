@@ -1,93 +1,195 @@
-.main-quiz {
-    width: 70%;
-    margin: 0 auto;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-bottom: 40px;
-}
-
-.questionSection {
-    position: relative;
-}
-
-.questionSection h1 {
-    max-width: 75%;
-    font-size: 18px;
-    font-weight: 400;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 28px 19px;
+/* Quiz Container */
+.container {
+    padding: 0 15px;
     width: 100%;
     box-sizing: border-box;
-}
-
-.questionSection .questionNumber {
-    white-space: nowrap;
-    font-weight: bold;
-}
-
-.questionSection .questionText {
+  }
+  
+  .main-quiz {
     width: 100%;
-}
-
-
-.questionSection p {
-    display: inline-block;
-    position: absolute;
-    right: 6px;
-    top: 2px;
-    width: 124px;
-}
-
-.questionSection p span {
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Question Section - Forces single line without truncation */
+  .questionSection {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    overflow: visible; /* Changed from hidden */
+  }
+  
+  .questionSection h1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    white-space: nowrap;
+    overflow: visible; /* Changed from hidden */
+    min-width: 0;
+    flex-wrap: nowrap;
+  }
+  
+  .questionNumber {
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  
+  .questionText {
+    white-space: nowrap;
+    overflow: visible; /* Changed from hidden */
+    text-overflow: clip; /* Changed from ellipsis */
+    flex-shrink: 1;
+    min-width: 0;
+  }
+  
+  .timer {
+    flex-shrink: 0;
+    font-size: 16px;
+    margin-left: 15px;
+  }
+  
+  .timer span {
     font-size: 25px;
     color: red;
     font-weight: 500;
-}
-
-.mainOptionSection {
-    max-width: 70%;
+  }
+  
+  /* Options Section */
+  .mainOptionSection {
+    width: 100%;
     margin: 0 auto;
-}
-
-.optionSection {
-    margin-top: 40px;
+  }
+  
+  .optionSection {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
-}
-
-.optionSection label {
-    flex: 0 0 48%;
-    /* each label takes approx 48% of container */
-    min-width: 200px;
+  }
+  
+  .optionSection label {
+    flex: 1 1 45%;
+    min-width: 150px;
     padding: 15px;
     border: 2px solid #ccc;
     border-radius: 6px;
     text-align: center;
     cursor: pointer;
     background-color: #f9f9f9;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: all 0.3s;
     box-sizing: border-box;
-}
-
-/* Hide radio buttons */
-.optionSection input[type="radio"] {
+    font-size: 16px;
+  }
+  
+  .optionSection input[type="radio"] {
     display: none;
-}
-
-/* Optional: style checked state (modern browser support only) */
-.optionSection label:has(input:checked) {
+  }
+  
+  .optionSection label:has(input:checked) {
     border-color: green;
     background-color: #d4f5d4;
-}
-
-.next_btn {
+  }
+  
+  /* Next Button */
+  .next_btn {
     display: block;
-    margin: 70px auto 0 auto;
-    padding: 10px 30px;
-    font-size: 18px;
-}
+    margin: 40px auto 0;
+    padding: 12px 30px;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .next_btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Result Text */
+  .result {
+    text-align: center;
+    font-size: 24px;
+    margin: 40px 0;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .questionSection {
+      flex-wrap: nowrap;
+    }
+    
+    .questionText {
+      white-space: normal; /* Allow wrapping only when needed */
+      overflow: visible;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .main-quiz {
+      padding: 15px;
+      padding-top: 30px;
+    }
+  
+    .questionSection {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .questionSection h1 {
+      width: 100%;
+      margin-top: 15px;
+    }
+  
+    .timer {
+      position: absolute;
+      right: 0;
+      top: -28px;
+      margin-left: 0;
+    }
+  
+    .optionSection label {
+      flex: 1 1 100%;
+    }
+  
+    .next_btn {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .questionSection h1 {
+      font-size: 16px;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 15px;
+    }
+  
+    .timer {
+      font-size: 14px;
+    }
+  
+    .timer span {
+      font-size: 20px;
+    }
+  
+    .optionSection label {
+      padding: 12px 10px;
+      font-size: 15px;
+    }
+  }

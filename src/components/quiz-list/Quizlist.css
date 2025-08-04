@@ -77,3 +77,25 @@
     margin-top: 5px;
     font-size: 14px;
 }
+
+@media (max-width: 768px) {
+    .main-quiz-list h1 {
+        font-size: 20px;
+    }
+
+    .main-each-finish-quiz {
+        flex-direction: column;
+    }
+
+    .each-finish-quiz {
+        border-bottom: 0.6px solid rgba(184, 182, 182, 0.4);
+        padding-top: 26px;
+    }
+    .each-finish-quiz:first-child{
+        padding-top: 0px;
+    }
+    .each-finish-quiz:last-child{
+        border: none;
+    }
+
+}

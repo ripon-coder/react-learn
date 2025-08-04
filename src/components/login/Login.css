@@ -3,10 +3,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh; /* center vertically */
-    background-color: #121212; /* optional dark background */
     padding: 20px;
     box-sizing: border-box;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 /* Main form container */
@@ -86,4 +86,8 @@
     text-align: center;
     font-size: 13px;
     color: #ccc;
+}
+
+@media (max-width: 768px) {
+
 }
