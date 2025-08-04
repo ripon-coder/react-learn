@@ -28,6 +28,7 @@
 .category p{
     text-align: justify;
     font-size: 13px;
+    word-spacing: -2px;
 }
 .category img{
     width: 100%;

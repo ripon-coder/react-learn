@@ -7,6 +7,7 @@ import Category from "./components/category/Category";
 import Footer from "./components/footer/Footer";
 import Quizlist from "./components/quiz-list/Quizlist";
 import Quiz from "./components/quiz/Quiz";
+import Login from "./components/login/Login";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={ <><Mycarousel /> <Category /></>}/>
         <Route path="/quiz-list/:id" element={ <><Quizlist/></>}/>
         <Route path="/quiz/:id" element={ <><Quiz/></>}/>
+        <Route path="/login" element={ <><Login/></>}/>
         <Route path="*" element={ <><h1>404 Page</h1></>}/>
       </Routes>
 

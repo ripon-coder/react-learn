@@ -3,10 +3,12 @@
     --text-color2:#9ACD32;
     --primary-color:#2A62D6;
 }
+*{
+    box-sizing: border-box;
+}
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 a{
@@ -16,8 +18,13 @@ a{
 h1,h2{
     margin: 0px;
 }
+.gray-dark{
+    background-color: #1A1C1D;
+    overflow: hidden;
+}
 .dark {
     background-color: #000;
+    overflow: hidden;
 }
 
 .container {

@@ -4,7 +4,7 @@ import logo from "../../assets/logo.png";
 export default function Navbar() {
   return (
     <>
-      <div className="dark">
+      <div className="gray-dark">
         <div className="navbar container">
           <div>
             <img src={logo} alt="logo" />
@@ -15,7 +15,7 @@ export default function Navbar() {
               <li>Ongoing Quizzes</li>
               <li>Upcoming Quizzes</li>
               <li>Register</li>
-              <li>Login</li>
+              <li><Link to="login">Login</Link></li>
             </ul>
           </div>
         </div>

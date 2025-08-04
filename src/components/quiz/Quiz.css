@@ -1,28 +1,93 @@
 .main-quiz {
-    height: 80vh;
     width: 70%;
     margin: 0 auto;
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin-top: 10px;
     margin-bottom: 10px;
+    padding-bottom: 40px;
 }
-.questionSection{
+
+.questionSection {
     position: relative;
 }
 
-.questionSection h1{
-    font-size: 22px;
+.questionSection h1 {
+    max-width: 75%;
+    font-size: 18px;
     font-weight: 400;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
     padding: 28px 19px;
-    display: inline-block;
-    width: 70%;
+    width: 100%;
+    box-sizing: border-box;
 }
+
+.questionSection .questionNumber {
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.questionSection .questionText {
+    width: 100%;
+}
+
+
 .questionSection p {
-	display: inline-block;
-	position: absolute;
-	right: 26px;
-	top: 2px;
+    display: inline-block;
+    position: absolute;
+    right: 6px;
+    top: 2px;
+    width: 124px;
 }
-.questionSection p span{
+
+.questionSection p span {
     font-size: 25px;
+    color: red;
+    font-weight: 500;
+}
+
+.mainOptionSection {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.optionSection {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.optionSection label {
+    flex: 0 0 48%;
+    /* each label takes approx 48% of container */
+    min-width: 200px;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s, border-color 0.3s;
+    box-sizing: border-box;
+}
+
+/* Hide radio buttons */
+.optionSection input[type="radio"] {
+    display: none;
+}
+
+/* Optional: style checked state (modern browser support only) */
+.optionSection label:has(input:checked) {
+    border-color: green;
+    background-color: #d4f5d4;
+}
+
+.next_btn {
+    display: block;
+    margin: 70px auto 0 auto;
+    padding: 10px 30px;
+    font-size: 18px;
 }

@@ -1,0 +1,89 @@
+/* Parent wrapper to center the form on the screen */
+.mainLoginForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* center vertically */
+    background-color: #121212; /* optional dark background */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Main form container */
+.loginForm {
+    width: 100%;
+    max-width: 400px; /* keep it responsive and stable */
+    background-color: #1A1C1D;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Entire form section with title */
+.loginFields {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Title */
+.loginFields h1 {
+    text-align: center;
+    color: var(--text-color, #fff);
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 28px;
+}
+
+/* Input group */
+.loginInputsection {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    color: var(--text-color, #fff);
+}
+
+.loginInputsection label {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.loginInputsection input[type="text"],
+.loginInputsection input[type="password"] {
+    padding: 12px;
+    background-color: #000;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* Forgot password text */
+.forgot_password {
+    font-size: 13px;
+    text-align: right;
+    margin-top: 5px;
+    color: #0069D9;
+    cursor: pointer;
+}
+
+/* Button style */
+.loginFields button {
+    margin-top: 2px;
+    background-color: #0069D9;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Register text */
+.signin_text {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #ccc;
+}
