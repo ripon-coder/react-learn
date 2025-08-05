@@ -6,13 +6,14 @@ import { apiFetch } from "../../../api.js";
 
 export default function Login() {
   const navigate = useNavigate();
+  const [load, setLoad] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function handleLogin(e) {
     e.preventDefault();
     if (email === "" || password === "") return;
-
+    setLoad(true);
     apiFetch("login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
@@ -20,6 +21,7 @@ export default function Login() {
       if (res.data.token) {
         setEmail("");
         setPassword("");
+        setLoad(false);
         localStorage.setItem("token", res.data.token);
         toast.success("Login successful!");
         navigate("/");
@@ -54,7 +56,7 @@ export default function Login() {
                 placeholder="Enter your password"
               />
               <p className="forgot_password">Forgot Password</p>
-              <button type="submit">Login</button>
+              <button disabled={load} type="submit">{load ? "Loading..." : "Login"}</button>
               <p className="signin_text">Don't have an account? Register</p>
             </form>
           </div>
