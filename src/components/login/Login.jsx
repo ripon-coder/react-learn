@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import "./Login.css";
 import { apiFetch } from "../../../api.js";
 import { useAuth } from "../../AuthContext";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const { login } = useAuth();
@@ -77,11 +78,11 @@ export default function Login() {
                 </div>
               </div>
 
-              <p className="forgot_password">Forgot Password</p>
+              <Link className="forgot_password">Forgot Password</Link>
               <button style={option.loading ? {backgroundColor:"gray"}: {}} disabled={option.loading} type="submit">
                 {option.loading ? "Loading..." : "Login"}
               </button>
-              <p className="signin_text">Don't have an account? Register</p>
+              <p className="signin_text">Don't have an account?  <Link>Register</Link></p>
             </form>
           </div>
         </div>

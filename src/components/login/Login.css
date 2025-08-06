@@ -81,10 +81,23 @@
 .forgot_password {
     font-size: 13px;
     text-align: right;
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     color: #0069D9;
     cursor: pointer;
 }
+
+.forgot_password,
+.forgot_password:active,
+.forgot_password:visited
+.forgot_password:focus{
+  background-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+
 
 /* Button style */
 .loginFields button {
@@ -106,7 +119,9 @@
     font-size: 13px;
     color: #ccc;
 }
-
+.signin_text>a{
+    color: #0069D9;
+}
 
 @media (max-width: 768px) {
 

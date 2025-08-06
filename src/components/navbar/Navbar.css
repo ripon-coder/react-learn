@@ -12,8 +12,8 @@
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  padding-left: 26px;
-  padding-right: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .nav-logo a,
@@ -51,6 +51,14 @@
 }
 
 /* Mobile menu button */
+
+.mobile-menu-btn:focus{
+  background-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
 .mobile-menu-btn {
   display: none;
   background: none;
@@ -80,7 +88,7 @@
 .mobile-menu a {
   color: white;
   text-decoration: none;
-  padding: 0.5rem 0;
+  padding: 10px 7px;
   border-bottom: 1px solid #555;
   font-size: 15px;
 }
