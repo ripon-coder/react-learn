@@ -18,15 +18,15 @@ a {
   text-decoration: none;
 }
 
-a,
-a:active,
+
+/* a:active,
 a:visited
 a:focus{
   background-color: transparent !important;
   outline: none !important;
   box-shadow: none !important;
   -webkit-tap-highlight-color: transparent !important;
-}
+} */
 
 h1,
 h2 {
