@@ -12,6 +12,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   function handleLogOut() {
     logout();
+    setIsOpen(false);
     toast.success("Logout successful!");
     navigate("/login", { replace: true });
   }
@@ -59,12 +60,25 @@ export default function Navbar() {
         <Link to="/quizzes" onClick={() => setIsOpen(false)}>
           Upcoming Quizzes
         </Link>
-        <Link to="/register" onClick={() => setIsOpen(false)}>
-          Register
-        </Link>
-        <Link to="/login" onClick={() => setIsOpen(false)}>
-          Login
-        </Link>
+
+        {isLoggedIn ? (
+          <Link
+            onClick={(e) => {
+              handleLogOut();
+            }}
+          >
+            Logout
+          </Link>
+        ) : (
+          <>
+            <Link to="/register" onClick={() => setIsOpen(false)}>
+              Register
+            </Link>
+            <Link to="/login" onClick={() => setIsOpen(false)}>
+              Login
+            </Link>
+          </>
+        )}
       </div>
     </nav>
   );
