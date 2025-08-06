@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import ScrollToTop from "./ScrollToTop";
 import PrivateRoute from "./PrivateRoute";
 import GuestRoute from "./GuestRoute";
@@ -16,16 +15,15 @@ import Login from "./components/login/Login";
 function App() {
   return (
     <Router>
-      <Navbar />
+      <Navbar/>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={ <><Mycarousel /> <Category /></>}/>
-        <Route path="/quiz-list/:id" element={ <><Quizlist/></>}/>
+        <Route path="/quiz-list/:id" element={<Quizlist/>}/>
         <Route path="/quiz/:id" element={<PrivateRoute><Quiz/></PrivateRoute>}/>
         <Route path="/login" element={ <GuestRoute><Login/></GuestRoute>}/>
         <Route path="*" element={ <><h1>404 Page</h1></>}/>
       </Routes>
-
       <Footer />
     </Router>
   );

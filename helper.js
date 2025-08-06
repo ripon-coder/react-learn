@@ -9,3 +9,13 @@ export function stripHtml(html) {
     return text.slice(0, maxLength) + "...";
   }
   
+  export function formatDateToDDMMYYYY(datetimeString) {
+  const date = new Date(datetimeString);
+  if (isNaN(date)) return ""; // invalid date handling
+
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0"); // months are 0-based
+  const year = date.getFullYear();
+
+  return `${day}-${month}-${year}`;
+}

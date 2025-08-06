@@ -1,83 +1,151 @@
 :root {
-    --text-color: #fff;
-    --text-color2: #9ACD32;
-    --primary-color: #2A62D6;
+  --text-color: #fff;
+  --text-color2: #9ACD32;
+  --primary-color: #2A62D6;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 a {
-    text-decoration: none;
-    color: var(--text-color);
+  text-decoration: none;
+  color: var(--text-color);
 }
 
 h1,
 h2 {
-    margin: 0px;
+  margin: 0px;
 }
 
 .gray-dark {
-    background-color: #1A1C1D;
-    overflow: hidden;
+  background-color: #1A1C1D;
+  overflow: hidden;
 }
 
 .dark {
-    background-color: #000;
-    overflow: hidden;
+  background-color: #000;
+  overflow: hidden;
 }
 
 .container {
-    max-width: 90%;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 15px;
+  max-width: 97%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 /* Loading css Start */
+
 .parentLoader {
-	min-height: 200px;
-	width: 100%;
-	background-color: black;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.loaderSlider {
+  width: 100%;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  background-color: #222;
+
+}
+
+.loaderSlider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  height: 100%;
+  width: 150%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+.loader-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin: -25px 0 0 -25px;
+  border: 5px solid #444;
+  border-top: 5px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 10;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -150%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
 .loader {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: inline-block;
-    border-top: 4px solid #FFF;
-    border-right: 4px solid transparent;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: 20px auto;
+  position: relative;
+  border: 3px solid #FFF;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: animloader 2s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  width: 6px;
+  height: 24px;
+  background: #FFF;
+  transform: rotate(-45deg);
+  position: absolute;
+  bottom: -20px;
+  left: 46px;
+}
+
+@keyframes animloader {
+  0% {
+    transform: translate(-10px, -10px);
   }
-  .loader::after {
-    content: '';  
-    box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border-bottom: 4px solid #FF3D00;
-    border-left: 4px solid transparent;
+  25% {
+    transform: translate(-10px, 10px);
   }
-  @keyframes rotation {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  } 
+  50% {
+    transform: translate(10px, 10px);
+  }
+  75% {
+    transform: translate(10px, -10px);
+  }
+  100% {
+    transform: translate(-10px, -10px);
+  }
+}
+    
+
 /* Loading css end */

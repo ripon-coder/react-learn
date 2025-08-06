@@ -57,6 +57,25 @@
     border-radius: 4px;
     outline: none;
 }
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px; /* prevent overlap */
+}
+
+.iconPassword {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  cursor: pointer;
+  font-size: 18px;
+}
 
 /* Forgot password text */
 .forgot_password {
@@ -87,6 +106,7 @@
     font-size: 13px;
     color: #ccc;
 }
+
 
 @media (max-width: 768px) {
 

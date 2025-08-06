@@ -37,8 +37,10 @@ const Mycarousel = () => {
 
         </Carousel>
       ) : (
-        <div className="parentLoader">
-          <span className="loader"></span>
+        <div style={{height:"448px"}} className="parentLoader">
+          <div style={{height:"448px"}} className="loaderSlider">
+            <div className="loader-spinner"></div>
+          </div>
         </div>
       )
       }

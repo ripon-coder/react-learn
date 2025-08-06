@@ -1,34 +1,47 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaEyeSlash,FaRegEye } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "./Login.css";
 import { apiFetch } from "../../../api.js";
+import { useAuth } from "../../AuthContext";
 
 export default function Login() {
+  const { login } = useAuth();
   const navigate = useNavigate();
-  const [load, setLoad] = useState(false);
+  const [option, setOption] = useState({ loading: false,showPassword:false });
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
 
   function handleLogin(e) {
     e.preventDefault();
     if (email === "" || password === "") return;
-    setLoad(true);
+
+    setOption({ ...option, loading: true });
+
     apiFetch("login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
-    }).then((res) => {
-      if (res.data.token) {
-        setEmail("");
-        setPassword("");
-        setLoad(false);
-        localStorage.setItem("token", res.data.token);
-        toast.success("Login successful!");
-        navigate("/");
-      } else {
-        toast.error("Invalid credentials");
-      }
-    });
+    })
+      .then((res) => {
+        setOption({ ...option, loading: false });
+
+        if (res.data.token) {
+          setEmail("");
+          setPassword("");
+          login(res.token);
+          toast.success("Login successful!");
+          navigate("/");
+        } else {
+          toast.error("Invalid credentials");
+        }
+      })
+      .catch((err) => {
+        setOption({ ...option, loading: false });
+        toast.error("Something went wrong");
+        console.error(err);
+      });
   }
 
   return (
@@ -48,15 +61,26 @@ export default function Login() {
                 placeholder="Enter your email"
               />
               <label>Password</label>
-              <input
-                required
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter your password"
-              />
+              <div className="password-wrapper">
+                <input
+                  required
+                  type={option.showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter your password"
+                />
+                <div
+                  className="iconPassword"
+                  onClick={() => setOption({...option, showPassword: !option.showPassword})}
+                >
+                  {option.showPassword ? <FaEyeSlash/> : <FaRegEye />}
+                </div>
+              </div>
+
               <p className="forgot_password">Forgot Password</p>
-              <button disabled={load} type="submit">{load ? "Loading..." : "Login"}</button>
+              <button style={option.loading ? {backgroundColor:"gray"}: {}} disabled={option.loading} type="submit">
+                {option.loading ? "Loading..." : "Login"}
+              </button>
               <p className="signin_text">Don't have an account? Register</p>
             </form>
           </div>

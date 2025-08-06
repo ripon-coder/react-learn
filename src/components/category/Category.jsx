@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "./Category.css";
 const IMAGE_BASE_URL = import.meta.env.VITE_IMAGE_BASE_URL;
 
-
 export default function Category() {
   const [data, setData] = useState([]);
 
@@ -21,13 +20,11 @@ export default function Category() {
     });
   }, []);
 
-
   return (
     <>
       <div className="dark">
         <div className="container">
           <div className="category-main">
-
             {data.length > 0 ? (
               data.map((item) => (
                 <div className="category" key={item.id}>
@@ -45,19 +42,25 @@ export default function Category() {
                       dangerouslySetInnerHTML={{ __html: item.video }}
                     />
                   ) : (
-                    <img src={`${IMAGE_BASE_URL}/homeImg/${item.img}`} alt={item.title} />
+                    <img
+                      src={`${IMAGE_BASE_URL}/homeImg/${item.img}`}
+                      alt={item.title}
+                    />
                   )}
 
                   <div className="btnGroup">
-                    <Link to={`/quiz-list/${item.id}`} className="btn">Quiz Info</Link>
+                    <Link to={`/quiz-list/${item.id}`} className="btn">
+                      Quiz Info
+                    </Link>
                     <button className="btn">Get Started</button>
                   </div>
                 </div>
               ))
             ) : (
-              <p>Loading categories...</p>
+              <div style={{ height: "300px" }} className="parentLoader">
+                <span className="loader"></span>
+              </div>
             )}
-
           </div>
           <div className="btnlist">
             <button>All ongoing Quiz</button>
