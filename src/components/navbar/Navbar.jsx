@@ -21,7 +21,9 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-logo">
-          <img src={logo} alt="Logo" />
+          <Link to="/">
+            <img src={logo} alt="Logo" />
+          </Link>
         </div>
 
         {/* Mobile menu button */}
