@@ -46,6 +46,7 @@ h2 {
 /* Loading css Start */
 
 .parentLoader {
+  padding-top: 3px;
   width: 100%;
   background-color: #000;
   display: flex;
@@ -55,7 +56,6 @@ h2 {
 
 .loaderSlider {
   width: 100%;
-  border-radius: 6px;
   position: relative;
   overflow: hidden;
   background-color: #222;
