@@ -30,21 +30,22 @@ export default function Quizlist() {
   return (
     <>
       <div className="dark">
-        <div className="container">
-          {data.content.length > 0 ? (
+        {data.content.length > 0 ? (
+          <div className="container">
             <div className="main-quiz-list">
               <h1>{data.content[0].title}</h1>
               <img src={`${IMAGE_BASE_URL}/homeImg/${data.content[0].img}`} />
               <p>{data.content[0].content}</p>
             </div>
-          ) : (
-            <div style={{ height: "448px" }} className="parentLoader">
-              <div style={{ height: "448px" }} className="loaderSlider">
-                <div className="loader-spinner"></div>
-              </div>
+          </div>
+        ) : (
+          <div style={{ height: "448px",paddingLeft:"5px",paddingRight:"5px" }} className="parentLoader">
+            <div style={{ height: "448px" }} className="loaderSlider">
+              <div className="loader-spinner"></div>
             </div>
-          )}
-
+          </div>
+        )}
+        <div className="container">
           <div className="finish-quiz-list">
             <h2>Recent Finished Quiz</h2>
             <div className="main-each-finish-quiz">
